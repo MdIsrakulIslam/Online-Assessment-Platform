@@ -96,7 +96,7 @@ export default function LoginForm() {
           </div>
 
           <button
-            className="w-full mt-4 px-4 py-3 bg-[#6355ff] text-white rounded-lg font-semibold hover:bg-[#4f42e5] transition-colors focus:ring-4 focus:ring-blue-200 flex justify-center items-center"
+            className="w-full mt-4 px-4 py-3 bg-[#6633FF] text-white rounded-lg font-semibold hover:bg-[#4f42e5] transition-colors focus:ring-4 focus:ring-blue-200 flex justify-center items-center"
             type="submit"
             disabled={loading}
           >

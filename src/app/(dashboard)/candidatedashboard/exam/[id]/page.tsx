@@ -208,7 +208,7 @@ const ExamPage = ({ params }: { params: Promise<{ id: string }> }) => {
                     </button>
                     <button 
                         onClick={handleNext}
-                        className="px-8 py-3.5 bg-[#8376ff] text-white font-bold rounded-2xl hover:bg-[#6c61d5] transition-all flex items-center gap-2 shadow-lg shadow-[#8376ff]/20"
+                        className="px-8 py-3.5 bg-[#6633FF] text-white font-bold rounded-2xl hover:bg-[#6c61d5] transition-all flex items-center gap-2 shadow-lg shadow-[#8376ff]/20"
                     >
                         {currentQuestionIndex === exam.questions.length - 1 ? 'Finish Test' : 'Save & Continue'}
                         <ChevronRight className="w-4 h-4" />

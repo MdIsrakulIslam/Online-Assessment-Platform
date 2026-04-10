@@ -32,7 +32,7 @@ const Dashboard = () => {
                         </div>
                     </div>
                     <Link href="/dashboard/manage-online-test">
-                        <button className="px-5 py-2.5 bg-[#8376ff] text-white font-semibold rounded-lg hover:bg-[#6c61d5] transition-colors shadow-sm tracking-wide">
+                        <button className="px-5 py-2.5 bg-[#6633FF] text-white font-semibold rounded-lg hover:bg-[#6c61d5] transition-colors shadow-sm tracking-wide">
                             Create Online Test
                         </button>
                     </Link>
@@ -69,7 +69,7 @@ const Dashboard = () => {
                                         <span>Exam Slots: <span className="font-semibold text-gray-900">{exam.totalSlots}</span></span>
                                     </div>
                                 </div>
-                                <button className="px-6 py-2 border border-[#8376ff] text-[#8376ff] font-semibold text-sm rounded-lg hover:bg-[#8376ff]/5 self-start transition-colors px-8">
+                                <button className="px-6 py-2 border border-[#6633FF] text-[#6633FF] font-semibold text-sm rounded-lg hover:bg-[#8376ff]/5 self-start transition-colors px-8">
                                     View Candidates
                                 </button>
                             </div>

@@ -106,11 +106,11 @@ const ManageTestForm = () => {
         <div className="flex items-center gap-2 mb-8 text-sm">
           <button
             onClick={() => setActiveTab("basic")}
-            className={`flex items-center gap-2 ${activeTab === "basic" ? "text-[#8376ff] font-bold" : "text-gray-500 font-medium"
+            className={`flex items-center gap-2 ${activeTab === "basic" ? "text-[#6633FF] font-bold" : "text-gray-500 font-medium"
               }`}
           >
             <span
-              className={`w-5 h-5 flex items-center justify-center rounded-full text-xs text-white ${activeTab === "basic" ? "bg-[#8376ff]" : "bg-gray-300"
+              className={`w-5 h-5 flex items-center justify-center rounded-full text-xs text-white ${activeTab === "basic" ? "bg-[#6633FF]" : "bg-gray-300"
                 }`}
             >
               1

@@ -84,7 +84,7 @@ const AddQuestionModal = ({ onClose, onSave, initialData }: AddQuestionModalProp
       <div className="bg-white rounded-xl shadow-xl w-full max-w-3xl flex flex-col max-h-[90vh]">
         <div className="flex items-center justify-between p-6 border-b border-gray-100 flex-shrink-0">
           <h2 className="text-xl font-bold text-gray-900">
-            {initialData ? "Edit Question" : "Add Question"}
+            {initialData ? "Edit Question" : "uestion"}
           </h2>
           <div className="flex items-center gap-4">
                <select
