@@ -29,29 +29,35 @@ export default function LoginForm() {
 
   const handleSubmit = async (formData: any) => {
     setLoading(true);
-    // const result = await signIn("credentials", {
-    //   // redirect: false,
-    //   email: formData.email,
-    //   password: formData.password,
-    // });
+    const result = await signIn("credentials", {
+      redirect: false,
+      email: formData.email,
+      password: formData.password,
+    });
 
-    // if (result?.error) {
-    //   toast.error("Invalid credentials. Try employer@gmail.com / 12345678");
-    //   setLoading(false);
-    // } else {
-    //   toast.success("Login successful!");
-    //   // router.push("/dashboard");
-    //   if (formData.email === "employer@gmail.com") {
-    //     router.push("/dashboard");
-    //   } else {
-    //     router.push("/candidate/dashboard");
-    //   }
-    //   router.refresh();
-    // }
-
-    (formData.email === "employer@gmail.com") && router.push("/dashboard");
-    (formData.email === "candidate@gmail.com") && router.push("/candidate/dashboard");
-    // ruter.refresh();
+    if (result?.error) {
+      toast.error("Invalid credentials. Try employer@gmail.com / 12345678");
+      setLoading(false);
+    } else {
+      toast.success("Login successful!");
+      
+      // Fetch the updated session to get the user's role
+      const { getSession } = await import("next-auth/react");
+      const session = await getSession();
+      
+      if (session?.user) {
+        const userRole = (session.user as any).role;
+        if (userRole === "employer") {
+          router.push("/dashboard");
+        } else if (userRole === "candidate") {
+          router.push("/candidatedashboard");
+        } else {
+          router.push("/dashboard");
+        }
+      }
+      
+      router.refresh();
+    }
   };
 
   return (
