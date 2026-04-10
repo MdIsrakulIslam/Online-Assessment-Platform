@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-[#1e1c2a] text-white py-4 px-8 flex justify-between items-center text-sm md:flex-row flex-col gap-2 z-50 mt-auto">
+        <footer className="w-full bg-[#130B2C] text-white py-4 px-8 flex justify-between items-center text-sm md:flex-row flex-col gap-2 z-50 mt-auto">
             <div className="flex items-center gap-2">
                 <span className="text-gray-300">Powered By</span>
                 <Image src="/footer.png" alt="Powered By AKIJ BOARD" width={110} height={30} className="object-contain" />
