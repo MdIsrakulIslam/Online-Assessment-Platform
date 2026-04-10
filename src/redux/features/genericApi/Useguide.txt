@@ -1,0 +1,49 @@
+# Get all data
+  const { data, isLoading, isError } = useGetAllDataQuery({
+    endpoint: "/users",
+    queryObj: [
+      { name: "page", value: 1 },
+      { name: "limit", value: 10 },
+      { name: "search", value: "john" }
+    ],
+    tags: ["Users"], 
+  });
+
+# Get single data
+  const { data, isLoading, isError } = useGetSingleDataQuery({
+    endpoint: "/users",
+    id: userId,
+    tags: ["Users"],
+  });
+
+
+# Create data
+ const [createData, { isLoading, isSuccess, isError }] = useCreateDataMutation();
+ await createData({
+        endpoint: "/users",
+        body: {
+          name: "John Doe",
+          email: "john@example.com",
+        },
+        invalidates: ["Users"],
+      });
+
+# Update data
+const [updateData, { isLoading }] = useUpdateDataMutation();
+  await updateData({
+    endpoint: "/users",
+    id: "123",
+    body: { name: "John Doe" },
+    invalidates: ["user"], 
+  });
+
+# Delete data
+  const [deleteData, { isLoading }] = useDeleteDataMutation();
+
+  const handleDelete = async () => {
+    await deleteData({
+      endpoint: "/users",
+      id: "123",
+      invalidates: ["user"], 
+    });
+  };
