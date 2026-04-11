@@ -1,24 +1,27 @@
 # 🚀 Project Name
 
-This is a web application built using Next.js, bootstrapped with `create-next-app`.
+This is a web application built using Next.js, tailwind css with `create-next-app`.
 
 ---
 
 ## 📂 GitHub Repository
+
 👉 Repository Link:  
-https://github.com/your-username/your-repo-name
+https://github.com/MdIsrakulIslam/Online-Assessment-Platform
 
 ---
 
 ## 🌐 Live Demo
+
 👉 Live Application:  
-https://your-live-demo-link.com
+https://online-assessment-platform-wine.vercel.app/
 
 ---
 
 ## 🎥 Video Demo
+
 👉 Project Walkthrough Video:  
-https://your-video-link.com
+https://drive.google.com/file/d/10iORO14wZl7bgjOVbULF9nD6V92d8xRh/view?usp=drive_link
 
 ---
 
@@ -28,10 +31,10 @@ Follow the steps below to run this project locally:
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/MdIsrakulIslam/Online-Assessment-Platform.git
 
 # 2. Navigate into the project folder
-cd your-repo-name
+cd Online-Assessment-Platform
 
 # 3. Install dependencies
 npm install
@@ -47,7 +50,6 @@ Now open 👉 http://localhost:3000 in your browser.
 ## 🛠️ Tech Stack
 
 - Next.js
-- React
 - TypeScript
 - Tailwind CSS (if used)
 
@@ -57,8 +59,6 @@ Now open 👉 http://localhost:3000 in your browser.
 
 - Modern UI/UX
 - Responsive design
-- Fast performance with server-side rendering
-- Dynamic data handling
 - Clean and maintainable code structure
 
 ---
@@ -66,15 +66,22 @@ Now open 👉 http://localhost:3000 in your browser.
 ## ❓ Additional Questions & Answers
 
 ### 1. MCP Integration
+
 Answer:  
-No, MCP integration has not been implemented in this project.
+No, I have not yet worked with MCP (Model Context Protocol). However, I have a clear understanding of how it can be leveraged to enhance development workflows, and I am confident in my ability to quickly adapt and implement it when required.
 
 ---
 
 ### 2. AI Tool Recommendation for Faster Frontend Development
+
 Answer:  
-While tools like Claude are popular, I recommend Antigravity AI as an alternative.  
-It provides efficient UI generation and helps speed up frontend development workflows.
+To accelerate frontend development, I actively use AI-powered tools that improve productivity and code quality.
+I highly recommend:
+
+1.Claude Code – Excellent for generating clean, structured code and assisting with complex logic.
+2.Antigravity – A powerful AI tool that helps streamline UI development, optimize workflows, and enhance overall development speed.
+
+These tools significantly reduce development time while maintaining high-quality output.
 
 ---
 
@@ -82,21 +89,14 @@ It provides efficient UI generation and helps speed up frontend development work
 
 Answer: 3-Layer Protection Strategy
 
-1. Local Persistence (Immediate Saving):  
-   Save every answer instantly using localStorage or IndexedDB to prevent data loss.
+To handle scenarios where a candidate loses internet connectivity during an exam, I would implement a robust 3-layer protection strategy:
 
-2. Backend Storage (If available):  
-   Sync data with the backend/database to ensure long-term persistence.
-
-3. Auto-Save & Recovery Mechanism:  
-   Implement periodic auto-save and restore unsaved data when the user revisits the app.
-
----
-
-## 📚 Learn More
-
-- https://nextjs.org/docs
-- https://nextjs.org/learn
+1.Local Persistence (Immediate Saving):
+Every answer is instantly saved to the browser using localStorage or IndexedDB as soon as it is entered, ensuring no data is lost.
+2.Connection Monitoring:
+Browser APIs are used to detect real-time network status changes, allowing the system to respond immediately when the user goes offline.
+3.Synchronization Queue:
+Once the connection is restored, all locally stored data is automatically synchronized with the server, ensuring a seamless and uninterrupted user experience.
 
 ---
 
