@@ -21,20 +21,20 @@ const CandidateDashboard = () => {
 
     return (
         <div className="w-full max-w-7xl mx-auto py-8 px-8 flex flex-col min-h-full pb-16">
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-8 sm:flex-row flex-col gap-4">
                 <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Online Tests</h1>
                 
                 <div className="flex items-center gap-4">
                     <div className="relative shadow-sm rounded-md">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300 w-4 h-4" />
+                        {/* <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-300 w-4 h-4" /> */}
                         <input 
                             type="text" 
                             placeholder="Search by exam title" 
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="pl-10 pr-4 py-2.5 border border-gray-200 rounded-lg bg-white w-72 focus:outline-none focus:ring-1 focus:ring-[#8376ff] text-sm text-gray-600 placeholder-gray-300"
+                            className="pl-5 pr-4 py-2.5 border border-gray-200 rounded-lg bg-white w-72 focus:outline-none focus:ring-1 focus:ring-[#8376ff] text-sm text-gray-600 placeholder-gray-300 "
                         />
-                        <div className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center bg-[#8376ff]/10 rounded font-bold">
+                        <div className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 flex items-center justify-center bg-[#8376ff]/10 rounded-full font-bold">
                            <Search className="w-3 h-3 text-[#8376ff]" strokeWidth={3} />
                         </div>
                     </div>

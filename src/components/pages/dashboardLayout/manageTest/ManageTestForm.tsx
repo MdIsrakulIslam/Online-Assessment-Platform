@@ -1,16 +1,15 @@
 "use client";
-import React, { useState } from "react";
-import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
 import Link from "next/link";
+import { useState } from "react";
+import { FormProvider, useForm } from "react-hook-form";
+import * as z from "zod";
 // import BasicInfoTab from "./BasicInfoTab";
 // import QuestionSetsTab from "./QuestionSetsTab";
-import { useAppDispatch } from "@/redux/hooks";
 import { addExam } from "@/redux/features/examSlice";
+import { useAppDispatch } from "@/redux/hooks";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import { ChevronRight } from "lucide-react";
 import BasicInfoTab from "./BasicInfoTab";
 import QuestionSetsTab from "./QuestionSetsTab";
 
@@ -33,11 +32,11 @@ const manageTestSchema = z.object({
           z.object({
             text: z.string(),
             isCorrect: z.boolean(),
-          })
+          }),
         )
         .optional(),
       textAnswer: z.string().optional(),
-    })
+    }),
   ),
 });
 
@@ -63,7 +62,7 @@ const ManageTestForm = () => {
       addExam({
         id: Math.random().toString(36).substr(2, 9),
         ...data,
-      })
+      }),
     );
     toast.success("Exam Created Successfully!");
     router.push("/dashboard");
@@ -103,40 +102,46 @@ const ManageTestForm = () => {
       </div>
 
       <div className="p-6">
-        <div className="flex items-center gap-2 mb-8 text-sm">
+        <div className="flex items-center gap-4 mb-8 text-sm md:text-base">
           <button
             onClick={() => setActiveTab("basic")}
-            className={`flex items-center gap-2 ${activeTab === "basic" ? "text-[#6633FF] font-bold" : "text-gray-500 font-medium"
-              }`}
+            className={`flex items-center gap-3 ${
+              activeTab === "basic"
+                ? "text-[#6633FF] font-bold"
+                : "text-gray-500 font-medium"
+            }`}
           >
             <span
-              className={`w-5 h-5 flex items-center justify-center rounded-full text-xs text-white ${activeTab === "basic" ? "bg-[#6633FF]" : "bg-gray-300"
-                }`}
+              className={`w-7 h-7 flex items-center justify-center rounded-full text-sm font-semibold text-white ${
+                activeTab === "basic" ? "bg-[#6633FF]" : "bg-[#DFE1E6]"
+              }`}
             >
               1
             </span>
             Basic Info
           </button>
 
-          <ChevronRight className="w-4 h-4 text-gray-400 mx-2" />
+          <div className="w-16 h-px bg-gray-400 font-bold mx-2"></div>
 
           <button
             onClick={() => {
               if (isBasicInfoSaved) setActiveTab("questions");
             }}
             disabled={!isBasicInfoSaved}
-            className={`flex items-center gap-2 ${activeTab === "questions"
-              ? "text-[#8376ff] font-bold"
-              : "text-gray-500 font-medium disabled:opacity-50"
-              }`}
+            className={`flex items-center gap-3 ${
+              activeTab === "questions"
+                ? "text-[#6633FF] font-bold"
+                : "text-gray-500 font-medium disabled:opacity-60"
+            }`}
           >
             <span
-              className={`w-5 h-5 flex items-center justify-center rounded-full text-xs text-white ${activeTab === "questions" ? "bg-[#8376ff]" : "bg-gray-300"
-                }`}
+              className={`w-7 h-7 flex items-center justify-center rounded-full text-sm font-semibold text-white ${
+                activeTab === "questions" ? "bg-[#6633FF]" : "bg-[#DFE1E6]"
+              }`}
             >
               2
             </span>
-            Question Sets
+            Questions
           </button>
         </div>
 

@@ -199,7 +199,7 @@ const ExamPage = ({ params }: { params: Promise<{ id: string }> }) => {
                 </div>
 
                 {/* Footer Controls */}
-                <div className="mt-auto pt-10 flex items-center justify-between">
+                <div className="mt-auto pt-10 flex items-center justify-between sm:flex-row flex-col gap-4">
                     <button 
                         onClick={handleNext}
                         className="text-gray-400 font-bold text-sm tracking-wide hover:text-gray-600 transition-colors"
