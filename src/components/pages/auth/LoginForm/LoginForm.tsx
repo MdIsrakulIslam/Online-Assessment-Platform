@@ -5,9 +5,9 @@ import MyFormInput from "@/components/ui/MyForm/MyFormInput/MyFormInput";
 import MyFormWrapper from "@/components/ui/MyForm/MyFormWrapper/MyFormWrapper";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { signIn } from "next-auth/react";
+// import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
+// import { toast } from "sonner";
 import { useState } from "react";
 
 const validationSchema = z.object({
@@ -29,34 +29,28 @@ export default function LoginForm() {
 
   const handleSubmit = async (formData: any) => {
     setLoading(true);
-    const result = await signIn("credentials", {
-      redirect: false,
-      email: formData.email,
-      password: formData.password,
+    const res = await fetch("/api/login", {
+      method: "POST",
+      body: JSON.stringify({
+        email: formData.email,
+        password: formData.password,
+      }),
     });
 
-    if (result?.error) {
-      toast.error("Invalid credentials. Try employer@gmail.com / 12345678");
-      setLoading(false);
-    } else {
-      toast.success("Login successful!");
-      
-      // Fetch the updated session to get the user's role
-      const { getSession } = await import("next-auth/react");
-      const session = await getSession();
-      
-      if (session?.user) {
-        const userRole = (session.user as any).role;
-        if (userRole === "employer") {
-          router.push("/dashboard");
-        } else if (userRole === "candidate") {
-          router.push("/candidatedashboard");
-        } else {
-          router.push("/dashboard");
-        }
+    const data = await res.json();
+
+    if (res.ok) {
+      // Save user (localStorage)
+      localStorage.setItem("user", JSON.stringify(data.user));
+
+      // Redirect based on role
+      if (data.user.role === "admin") {
+        router.push("/dashboard");
+      } else {
+        router.push("/candidatedashboard");
       }
-      
-      router.refresh();
+    } else {
+      alert(data.message);
     }
   };
 
